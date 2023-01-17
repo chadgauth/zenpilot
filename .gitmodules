@@ -1,6 +1,7 @@
 [submodule "panda"]
 	path = panda
-	url = https://github.com/dragonpilot-community/panda.git
+	url = https://github.com/chadgauth/panda.git
+  branch = feature/canfilter
 [submodule "laika_repo"]
   path = laika_repo
   url = https://github.com/commaai/laika.git
