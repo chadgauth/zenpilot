@@ -17,6 +17,7 @@
 [submodule "opendbc"]
   path = opendbc
   url = https://github.com/chadgauth/opendbc.git
+  branch = dragonpilot
 [submodule "cereal"]
   path = cereal
   url = https://github.com/chadgauth/cereal.git
