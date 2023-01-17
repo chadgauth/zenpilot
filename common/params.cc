@@ -289,6 +289,7 @@ std::unordered_map<std::string, uint32_t> keys = {
     {"dp_lateral_version", PERSISTENT},
     {"dp_lateral_steer_rate_cost", PERSISTENT},
     {"dp_toyota_change5speed", PERSISTENT},
+    {"dp_toyota_radar_acc_tss1_object_mode", PERSISTENT},
 };
 
 } // namespace

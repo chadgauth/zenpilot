@@ -9,7 +9,8 @@ from common.numpy_fast import interp
 from common.params import Params
 from common.realtime import Ratekeeper, Priority, config_realtime_process
 from selfdrive.controls.lib.radar_helpers import Cluster, Track, RADAR_TO_CAMERA
-from system.swaglog import cloudlog
+from selfdrive.swaglog import cloudlog
+from selfdrive.car.toyota.values import RADAR_ACC_CAR_TSS1
 from third_party.cluster.fastcluster_py import cluster_points_centroid
 
 
@@ -90,7 +91,7 @@ def get_lead(v_ego, ready, clusters, lead_msg, lead_index, low_speed_override=Tr
 
 
 class RadarD():
-  def __init__(self, radar_ts, delay=0):
+  def __init__(self, radar_ts, delay=0, is_tss1=0):
     self.current_time = 0
 
     self.tracks = defaultdict(dict)
@@ -101,6 +102,7 @@ class RadarD():
     self.v_ego_hist = deque([0], maxlen=delay+1)
 
     self.ready = False
+    self.radar_acc_tss1 = is_tss1
 
   def update(self, sm, rr):
     self.current_time = 1e-9*max(sm.logMonoTime.values())
@@ -113,7 +115,7 @@ class RadarD():
 
     ar_pts = {}
     for pt in rr.points:
-      ar_pts[pt.trackId] = [pt.dRel, pt.yRel, pt.vRel, pt.measured]
+      ar_pts[pt.trackId] = [pt.dRel, pt.yRel, pt.vRel - self.v_ego_hist[0] if self.radar_acc_tss1 else pt.vRel, pt.measured]
 
     # *** remove missing points from meta data ***
     for ids in list(self.tracks.keys()):
@@ -200,7 +202,10 @@ def radard_thread(sm=None, pm=None, can_sock=None):
   RI = RadarInterface(CP)
 
   rk = Ratekeeper(1.0 / CP.radarTimeStep, print_delay_threshold=None)
-  RD = RadarD(CP.radarTimeStep, RI.delay)
+  RD = RadarD(CP.radarTimeStep, RI.delay, CP.carFingerprint in RADAR_ACC_CAR_TSS1)
+
+  # TODO: always log leads once we can hide them conditionally
+  enable_lead = CP.openpilotLongitudinalControl or not CP.radarOffCan
 
   while 1:
     can_strings = messaging.drain_sock_raw(can_sock, wait_for_one=True)
