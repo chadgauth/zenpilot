@@ -22,12 +22,12 @@ pre-commit uninstall || true
 
 echo "[-] bringing master-ci and devel in sync T=$SECONDS"
 cd $TARGET_DIR
-git fetch --depth 1 origin release
+git fetch --depth 1 origin develop
 git fetch --depth 1 origin feature/canfilter-nodsu
 
-git checkout -f --track origin/release
-git reset --hard release
-git checkout release
+git checkout -f --track origin/develop
+git reset --hard develop
+git checkout develop
 git reset --hard origin/feature/canfilter-nodsu
 git clean -xdff
 git lfs uninstall
@@ -77,7 +77,7 @@ fi
 
 if [ ! -z "$BRANCH" ]; then
   echo "[-] Pushing to $BRANCH T=$SECONDS"
-  git push -f origin release:$BRANCH
+  git push -f origin develop:$BRANCH
 fi
 
 echo "[-] done T=$SECONDS, ready at $TARGET_DIR"
