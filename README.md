@@ -1,30 +1,25 @@
 # zenpilot
 
+zenpilot is my passion project, a custom fork of the open-source driver assistance system, [Openpilot](https://github.com/commaai/openpilot). My goal is to focus on sane branch management strategies and UI organization to keep the software as close to stock as possible while enhancing it when necessary.
+
+I'm currently building a community of like-minded developers who share my vision of creating a safe and user-friendly self-driving software. If you're passionate about making a difference in the world of autonomous vehicles and want to be a part of this project, I welcome you to join me.
+
+I actively welcome pull requests, issues, and feature requests on GitHub. I believe that together, we can make this software better, safer and more user-friendly. With our easy-to-use documentation, you can quickly start making a difference.
+
+Join me in this journey, and let's elevate the self-driving experience to new heights. Upgrade your ride with zenpilot today!
+
 ## Table of Contents
 
 ---
 
 - [zenpilot](#zenpilot)
   - [Table of Contents](#table-of-contents)
-  - [Other languages](#other-languages)
-  - [What is zenpilot?](#what-is-zenpilot)
   - [Community and Contributing](#community-and-contributing)
   - [What is openpilot?](#what-is-openpilot)
   - [Safety and Testing](#safety-and-testing)
   - [Directory Structure](#directory-structure)
   - [Licensing and Disclaimer](#licensing-and-disclaimer)
-
-## Other languages
-
----
-
-- [Japanese](README.ja.md)
-
-## What is zenpilot?
-
----
-
-[zenpilot](https://github.com/chadgauth/zenpilot) is a custom fork of [openpilot](https://github.com/commaai/openpilot).
+  - [Other languages](#other-languages)
 
 ## Community and Contributing
 
@@ -98,3 +93,9 @@ By using this software, you acknowledge and agree that:
 5. The developers and maintainers of this software are not responsible for any injuries or damage resulting from the use of this software.
 
 6. You shall indemnify and hold harmless the developers and maintainers of this software from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by you.
+
+## Other languages
+
+---
+
+- [Japanese](README.ja.md)
