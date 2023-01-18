@@ -6,12 +6,19 @@
 
 - [zenpilot](#zenpilot)
   - [Table of Contents](#table-of-contents)
+  - [Other languages](#other-languages)
   - [What is zenpilot?](#what-is-zenpilot)
-  - [What is openpilot?](#what-is-openpilot)
   - [Community and Contributing](#community-and-contributing)
+  - [What is openpilot?](#what-is-openpilot)
   - [Safety and Testing](#safety-and-testing)
   - [Directory Structure](#directory-structure)
-  - [Licensing](#licensing)
+  - [Licensing and Disclaimer](#licensing-and-disclaimer)
+
+---
+
+## Other languages
+
+- [Japanese](README.ja.md)
 
 ---
 
@@ -23,19 +30,19 @@
 
 ---
 
+## Community and Contributing
+
+=======================
+
+zenpilot is developed by [chadgauth](https://github.com/chadgauth) and by drivers like you. We welcome both pull requests and issues on [GitHub](http://github.com/chadgauth/zenpilot). Feature requests are encouraged, and integration will be faster if you share commit hashes from other forks. Check out [the contributing docs](docs/CONTRIBUTING.md) for more information.
+
+---
+
 ## What is [openpilot](https://github.com/commaai/openpilot)?
 
 =======================
 
 openpilot is an open source driver assistance system that includes features such as Adaptive Cruise Control (ACC), Automated Lane Centering (ALC), Forward Collision Warning (FCW), and Lane Departure Warning (LDW) for a growing number of supported car makes, models, and model years. Also includes a camera-based Driver Monitoring (DM) feature that alerts drivers who may be distracted or asleep.
-
----
-
-## Community and Contributing
-
-=======================
-
-zenpilot is developed by [chadgauth](https://github.com/chadgauth) and by drivers like you. I welcome both pull requests and issues on [GitHub](http://github.com/chadgauth/zenpilot). Feature requests are encouraged. Bonus points and faster integration if you share commit hashes from other forks. Check out [the contributing docs](docs/CONTRIBUTING.md).
 
 ---
 
@@ -83,16 +90,24 @@ zenpilot will follow all safety/tests guidelines defined in [openpilot safety do
 
 ---
 
-## Licensing
+## Licensing and Disclaimer
 
 =======================
 
-zenpilot is released under the MIT license. Some parts of the software are released under other licenses as specified.
+zenpilot is released under the MIT license. Some parts of the software may be released under other licenses as specified.
 
-Any user of this software shall indemnify and hold harmless Comma.ai, Inc. and its directors, officers, employees, fork maintainers, agents, stockholders, affiliates, subcontractors and customers from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by user.
+By using this software, you acknowledge and agree that:
 
-**THIS IS ALPHA QUALITY SOFTWARE FOR RESEARCH PURPOSES ONLY. THIS IS NOT A PRODUCT.
-YOU ARE RESPONSIBLE FOR COMPLYING WITH LOCAL LAWS AND REGULATIONS.
-NO WARRANTY EXPRESSED OR IMPLIED.**
+1. The software is provided "as is" and "with all faults." The developers and maintainers of this software make no representations or warranties of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, accuracy, or non-infringement.
+
+2. The developers and maintainers of this software shall not be liable for any damages, including but not limited to, direct, indirect, special, incidental, or consequential damages, arising out of or in connection with the use or inability to use the software.
+
+3. You are solely responsible for complying with all applicable laws, regulations, and guidelines related to the use of this software, including but not limited to, those related to self-driving cars and vehicle safety.
+
+4. This software is intended for research and development purposes only and is not intended for use in a production environment.
+
+5. The developers and maintainers of this software are not responsible for any injuries or damage resulting from the use of this software.
+
+6. You shall indemnify and hold harmless the developers and maintainers of this software from and against all allegations, claims, actions, suits, demands, damages, liabilities, obligations, losses, settlements, judgments, costs and expenses (including without limitation attorneys’ fees and costs) which arise out of, relate to or result from any use of this software by you.
 
 ---
