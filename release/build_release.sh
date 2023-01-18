@@ -11,7 +11,7 @@ SOURCE_DIR="$(git rev-parse --show-toplevel)"
 
 FILES_SRC="release/files_tici"
 RELEASE_BRANCH="release3"
-DEVEL_BRANCH="devel"
+DEVEL_BRANCH="develop"
 
 # set git identity
 source $DIR/identity.sh
@@ -24,8 +24,8 @@ cd $BUILD_DIR
 git init
 # set git username/password
 source /data/identity.sh
-git remote add origin https://github.com/dragonpilot-community/dragonpilot.git
-git remote add devel https://github.com/efinilan/dp-devel.git
+git remote add origin https://github.com/chadgauth/zenpilot.git
+git remote add develop https://github.com/chadgauth/zenpilot.git
 git fetch origin $RELEASE_BRANCH
 
 # do the files copy
