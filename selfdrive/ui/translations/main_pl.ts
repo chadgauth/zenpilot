@@ -702,7 +702,7 @@ nie zostało ustawione</translation>
         <translation>Upewnij się, że wpisany adres URL jest poprawny, a połączenie internetowe działa poprawnie.</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>Uruchom ponownie</translation>
     </message>
     <message>

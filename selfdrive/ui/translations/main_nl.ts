@@ -698,7 +698,7 @@ ingesteld</translation>
         <translation>Zorg ervoor dat de ingevoerde URL geldig is en dat de internetverbinding van het apparaat goed is.</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>Apparaat opnieuw opstarten</translation>
     </message>
     <message>

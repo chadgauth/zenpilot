@@ -717,7 +717,7 @@ location set</source>
         <translation>請確定您輸入的是有效的安裝網址，並且確定設備的網路連線狀態良好。</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>重新啟動</translation>
     </message>
     <message>
