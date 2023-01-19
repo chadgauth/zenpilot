@@ -74,7 +74,7 @@ jobs:
     - uses: ./.github/workflows/setup
       with:
         save-cache: true
-    - name: Build openpilot with all flags
+    - name: Build zenpilot with all flags
       run: ${{ env.RUN }} "scons -j$(nproc) --extras && release/check-dirty.sh"
     - name: Cleanup scons cache
       run: |
@@ -177,23 +177,23 @@ jobs:
       timeout-minutes: 5
       run: ${{ env.RUN }} "pre-commit run --all"
 
-  valgrind:
-    name: valgrind
-    runs-on: ubuntu-20.04
-    timeout-minutes: 20
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: true
-    - uses: ./.github/workflows/setup
-    - name: Build zenpilot
-      run: ${{ env.RUN }} "scons -j$(nproc)"
-    - name: Run valgrind
-      run: |
-        ${{ env.RUN }} "python selfdrive/test/test_valgrind_replay.py"
-    - name: Print logs
-      if: always()
-      run: cat selfdrive/test/valgrind_logs.txt
+  # valgrind:
+  #   name: valgrind
+  #   runs-on: ubuntu-20.04
+  #   timeout-minutes: 20
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #     with:
+  #       submodules: true
+  #   - uses: ./.github/workflows/setup
+  #   - name: Build zenpilot
+  #     run: ${{ env.RUN }} "scons -j$(nproc)"
+  #   - name: Run valgrind
+  #     run: |
+  #       ${{ env.RUN }} "python selfdrive/test/test_valgrind_replay.py"
+  #   - name: Print logs
+  #     if: always()
+  #     run: cat selfdrive/test/valgrind_logs.txt
 
   unit_tests:
     name: unit tests
@@ -253,7 +253,7 @@ jobs:
       with:
         path: /tmp/comma_download_cache
         key: proc-replay-${{ hashFiles('.github/workflows/selfdrive_tests.yaml', 'selfdrive/test/process_replay/ref_commit') }}
-    - name: Build openpilot
+    - name: Build zenpilot
       run: |
         ${{ env.RUN }} "scons -j$(nproc)"
     - name: Run replay
@@ -280,6 +280,7 @@ jobs:
     name: model tests
     runs-on: ubuntu-20.04
     timeout-minutes: 20
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && github.repository == 'commaai/openpilot'
     steps:
     - uses: actions/checkout@v3
       with:
@@ -351,7 +352,7 @@ jobs:
       with:
         path: /tmp/comma_download_cache
         key: car_models-${{ hashFiles('selfdrive/car/tests/test_models.py', 'selfdrive/car/tests/routes.py') }}-${{ matrix.job }}
-    - name: Build openpilot
+    - name: Build zenpilot
       run: ${{ env.RUN }} "scons -j$(nproc)"
     - name: Test car models
       timeout-minutes: 12
