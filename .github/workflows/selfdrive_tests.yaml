@@ -7,7 +7,7 @@ on:
   pull_request:
 
 concurrency:
-  group: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.run_id || github.head_ref || github.ref }}-${{ github.workflow }}-${{ github.event_name }}
+  group: ${{ github.event_name == 'push' && github.ref == 'refs/heads/develop' && github.run_id || github.head_ref || github.ref }}-${{ github.workflow }}-${{ github.event_name }}
   cancel-in-progress: true
 
 env:
@@ -43,9 +43,9 @@ jobs:
       run: TARGET_DIR=$STRIPPED_DIR release/build_devel.sh
     - uses: ./.github/workflows/setup
     - name: Check submodules
-      if: github.ref == 'refs/heads/master' && github.repository == 'commaai/openpilot'
+      if: github.ref == 'refs/heads/develop' && github.repository == 'chadgauth/zenpilot'
       run: release/check-submodules.sh
-    - name: Build openpilot and run checks
+    - name: Build zenpilot and run checks
       run: |
         cd $STRIPPED_DIR
         ${{ env.RUN }} "CI=1 python selfdrive/manager/build.py"
@@ -142,7 +142,7 @@ jobs:
     name: docker push
     runs-on: ubuntu-20.04
     timeout-minutes: 22
-    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request' && github.repository == 'commaai/openpilot'
+    if: github.ref == 'refs/heads/develop' && github.event_name != 'pull_request' && github.repository == 'chadgauth/zenpilot'
     needs: static_analysis # hack to ensure slow tests run first since this and static_analysis are fast
     steps:
     - uses: actions/checkout@v3
@@ -186,7 +186,7 @@ jobs:
       with:
         submodules: true
     - uses: ./.github/workflows/setup
-    - name: Build openpilot
+    - name: Build zenpilot
       run: ${{ env.RUN }} "scons -j$(nproc)"
     - name: Run valgrind
       run: |
@@ -204,7 +204,7 @@ jobs:
       with:
         submodules: true
     - uses: ./.github/workflows/setup
-    - name: Build openpilot
+    - name: Build zenpilot
       run: ${{ env.RUN }} "scons -j$(nproc)"
     - name: Run unit tests
       timeout-minutes: 15
@@ -270,7 +270,7 @@ jobs:
         name: process_replay_diff.txt
         path: selfdrive/test/process_replay/diff.txt
     - name: Upload reference logs
-      if: ${{ failure() && github.event_name == 'pull_request' && github.repository == 'commaai/openpilot' && env.AZURE_TOKEN != '' }}
+      if: ${{ failure() && github.event_name == 'pull_request' && github.repository == 'chadgauth/zenpilot' && env.AZURE_TOKEN != '' }}
       run: |
         ${{ env.RUN }} "CI=1 AZURE_TOKEN='$AZURE_TOKEN' python selfdrive/test/process_replay/test_processes.py -j$(nproc) --upload-only"
     - name: "Upload coverage to Codecov"
@@ -288,7 +288,7 @@ jobs:
     - name: Build Docker image
       # Sim docker is needed to get the OpenCL drivers
       run: eval "$BUILD_CL"
-    - name: Build openpilot
+    - name: Build zenpilot
       run: |
         ${{ env.RUN }} "scons -j$(nproc)"
     - name: Run model replay with ONNX
@@ -313,7 +313,7 @@ jobs:
       with:
         submodules: true
     - uses: ./.github/workflows/setup
-    - name: Build openpilot
+    - name: Build zenpilot
       run: |
         ${{ env.RUN }} "scons -j$(nproc)"
     - name: Test longitudinal
