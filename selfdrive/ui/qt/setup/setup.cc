@@ -331,7 +331,7 @@ QWidget * Setup::download_failed() {
   blayout->setSpacing(50);
   main_layout->addLayout(blayout, 0);
 
-  QPushButton *reboot = new QPushButton(tr("Reboot device"));
+  QPushButton *reboot = new QPushButton(tr("Please reboot the device"));
   reboot->setObjectName("navBtn");
   blayout->addWidget(reboot);
   QObject::connect(reboot, &QPushButton::clicked, this, [=]() {

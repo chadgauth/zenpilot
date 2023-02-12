@@ -388,7 +388,7 @@
     <message>
         <source>Get turn-by-turn directions displayed and more with a comma
 prime subscription. Sign up now: https://connect.comma.ai</source>
-        <translation>Obtenha instruções passo a passo exibidas e muito mais com 
+        <translation>Obtenha instruções passo a passo exibidas e muito mais com
 uma assinatura prime Inscreva-se agora:  https://connect.comma.ai</translation>
     </message>
     <message>
@@ -721,7 +721,7 @@ trabalho definido</translation>
         <translation>Garanta que a URL inserida é valida, e uma boa conexão à internet.</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>Reiniciar Dispositivo</translation>
     </message>
     <message>

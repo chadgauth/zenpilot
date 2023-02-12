@@ -717,7 +717,7 @@ location set</source>
         <translation>입력된 URL이 유효하고 장치의 네트워크 연결이 잘 되어 있는지 확인하세요.</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>재부팅</translation>
     </message>
     <message>

@@ -717,7 +717,7 @@ location set</source>
         <translation>入力された URL を確認し、デバイスがインターネットに接続されていることを確認してください。</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>デバイスを再起動</translation>
     </message>
     <message>
