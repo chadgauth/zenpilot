@@ -34,7 +34,7 @@ body:
     attributes:
       label: zenpilot version
       description: If you're not on release, provide the commit hash
-      placeholder: 0-23.JAN.18-ZP-0.9.0
+      placeholder: 0-23.FEB.11-ZP-0.9.0
     validations:
       required: true
 
