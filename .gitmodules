@@ -3,7 +3,7 @@
   url = https://github.com/chadgauth/panda.git
 [submodule "opendbc"]
   path = opendbc
-  url = .https://github.com/chadgauth/opendbc.git
+  url = https://github.com/chadgauth/opendbc.git
 [submodule "laika_repo"]
   path = laika_repo
   url = ../../commaai/laika.git
