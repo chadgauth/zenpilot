@@ -41,6 +41,8 @@ build_projects["panda"] = {
     "-Os",
     "-g",
     "-DPANDA",
+    "-DSSPOOF" if not os.getenv("SSPOOF") else "",
+    "-DATL" if not os.getenv("ATL") else "",
   ],
 }
 

@@ -714,7 +714,7 @@ location set</source>
         <translation>تأكد من أن عنوان موقع الويب الذي تم إدخاله صالح ، وأن اتصال الجهاز بالإنترنت جيد.</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>إعادة تشغيل الجهاز</translation>
     </message>
     <message>

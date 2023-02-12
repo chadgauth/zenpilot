@@ -715,7 +715,7 @@ location set</source>
         <translation>请确保互联网连接良好且输入的URL有效。</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>重启设备</translation>
     </message>
     <message>

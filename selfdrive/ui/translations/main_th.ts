@@ -694,7 +694,7 @@ location set</source>
         <translation>ตรวจสอบให้แน่ใจว่า URL ที่ป้อนนั้นถูกต้อง และอุปกรณ์เชื่อมต่ออินเทอร์เน็ตอยู่</translation>
     </message>
     <message>
-        <source>Reboot device</source>
+        <source>Please reboot the device</source>
         <translation>รีบูตอุปกรณ์</translation>
     </message>
     <message>
